@@ -1,6 +1,7 @@
 package sg.com.cyf.myassignment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,10 +12,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     Button blogout;
-    String Name;
-    String Email;
-    String User;
-    String Password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +20,17 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
-        Name = getIntent().getExtras().getString("Name");
-        Email = getIntent().getExtras().getString("Email Address");
-        User = getIntent().getExtras().getString("Username");
-        Password = getIntent().getExtras().getString("Password");
+        SharedPreferences prefs= getSharedPreferences("MY_Assignment",MODE_PRIVATE);
 
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText("Name:" + " " + Name + '\n' + "Email Address:" + " " + Email + '\n' + "Username" + " " + User + '\n' + "Password:" + " " + Password);
+        String name =prefs.getString("MY_NAME","no name");
+        String email =prefs.getString("MY_EMAIL","no email");
+        String user =prefs.getString("MY_USER","no user");
+        String password =prefs.getString("MY_PASSWORD","no password");
 
+        ((TextView)findViewById(R.id.nameLabel)).setText(name);
+        ((TextView)findViewById(R.id.emailLabel)).setText(email);
+        ((TextView)findViewById(R.id.userLabel)).setText(user);
+        ((TextView)findViewById(R.id.passwordLabel)).setText(password);
 
         blogout = (Button) findViewById(R.id.blogout);
         blogout.setOnClickListener(new View.OnClickListener() {
