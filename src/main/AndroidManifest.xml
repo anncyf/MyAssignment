@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sg.com.cyf.myassignment">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="myassignment"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Main Activity -->
+        <activity android:name=".ConverterActivity">
+            <intent-filter>
+                <!-- MAIN represents that it is the Main Activity -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- Launcher Denotes that it will be the first launching activity -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Add Other activities like this -->
+        <activity android:name=".SearchActivity"/>
+
+        <!-- OR Other activities like this And  intent filter is not necessary in other activites -->
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".RegActivity" />
+    </application>
+
+</manifest>
