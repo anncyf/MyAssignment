@@ -17,9 +17,13 @@ public class SearchActivity extends AppCompatActivity  {
 //declare variable and string value
     Toolbar toolbar;
     ListView lst;
-    String[] country ={"Australia","Austria","Argentina","Belgium","Brazil","Brunei","China","Canada","Colombia","Cambodia","Denmark","Egypt","France","Germany","Greece","Hungary","Iceland","India","Indonesia","Italy","Iran","Japan",
-            "Jordan","Kenya","Laos","Malaysia","Maldives","Mexico","Mongolia","Myanmar","Nepal","New Zealand","North Korea","Norway","Pakistan","Peru","Philippines","Portugal","Russia","Singapore","South Africa","South Korea",
-            "Sri Lanka","Switzerland","Sweden","Taiwan","Thailand","Turkey","United Kingdom","United States of America ","Vietnam",};
+    //rate are base on 4/11/2017 exchange rate form online
+    String[] country ={"Australia:0.957","Argentina:12.919","Brazil:2.427","Brunei:1.0","China:4.86",
+            "Canada:0.934","Colombia:2223.8","Cambodia:2958.54","Euro:0.63","Hungary:196.8","Iceland:77.92","HongKong:5.71",
+            "India:47.3","Indonesia:9890.3","Italy:1259.88","Iran:25618.44","Japan:83.56","Kenya:75.97","Laos:6078.49","Malaysia:3.10",
+            "Maldives:11.28","Mexico:14.07","Mongolia:1798.40","Myanmar:991.80","Nepal:76.09","New Zealand:1.06","North Korea:659.29","Pakistan:77.199",
+            "Peru:2.38","Philippines:37.58","Russia:43.26","South Africa:10.42","South Korea:817.01","Switzerland:0.73",
+            "Sweden:6.18","Taiwan:22.10","Thailand:24.27","Turkey:2.85","United Kingdom:0.56","United States of America:0.732 ","Vietnam:16637.98",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +58,7 @@ public class SearchActivity extends AppCompatActivity  {
         lst.setAdapter(arrayAdapter);
     }
 
-
+//action bar drop down selection
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
